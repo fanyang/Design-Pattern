@@ -1,4 +1,4 @@
-package designpattern.structural.Decorator;
+package designpattern.structural.decorator;
 
 public class ConcreteDecoratorB extends Decorator {
 

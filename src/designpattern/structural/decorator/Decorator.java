@@ -1,4 +1,4 @@
-package designpattern.structural.Decorator;
+package designpattern.structural.decorator;
 
 public abstract class Decorator extends Component {
 	

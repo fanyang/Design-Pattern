@@ -1,4 +1,4 @@
-package designpattern.structural.Composite;
+package designpattern.structural.composite;
 
 public abstract class Component {
 	
