@@ -1,6 +1,6 @@
 package designpattern.structural.decorator;
 
-public class ConcreteComponent extends Component {
+public class ConcreteComponent implements Component {
 
 	@Override
 	public void operation() {

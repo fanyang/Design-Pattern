@@ -1,6 +1,6 @@
 package designpattern.structural.decorator;
 
-public abstract class Decorator extends Component {
+public abstract class Decorator implements Component {
 	
 	protected Component component;
 	

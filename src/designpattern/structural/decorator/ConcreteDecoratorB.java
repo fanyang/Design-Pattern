@@ -12,10 +12,6 @@ public class ConcreteDecoratorB extends Decorator {
 	
 	@Override
 	public void operation() {
-		
-		System.out.println("ConcreteDecoratorB");
-		
-		component.operation();
 	}
 
 }

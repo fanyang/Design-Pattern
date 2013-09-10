@@ -1,7 +1,7 @@
 package designpattern.structural.decorator;
 
-public abstract class Component {
+public interface Component {
 
-	public abstract void operation();
+	public void operation();
 	
 }
