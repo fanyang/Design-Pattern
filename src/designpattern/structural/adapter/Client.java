@@ -8,6 +8,7 @@ public class Client {
 		
 		target.request();
 		
+		
 		Target target2 = new Adapter2(new Adaptee());
 		
 		target2.request();
