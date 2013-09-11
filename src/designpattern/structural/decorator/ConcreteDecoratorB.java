@@ -12,6 +12,9 @@ public class ConcreteDecoratorB extends Decorator {
 	
 	@Override
 	public void operation() {
+		
+		// TODO
+		
 	}
 
 }
