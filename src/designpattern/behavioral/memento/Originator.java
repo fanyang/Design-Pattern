@@ -2,7 +2,7 @@ package designpattern.behavioral.memento;
 
 public class Originator {
 	
-	private boolean state;
+	private int state;
 	
 	
 	public void setMemento(Memento memento) {
@@ -20,14 +20,14 @@ public class Originator {
 
 
 	
-	public boolean getState() {
+	public int getState() {
 		
 		return state;
 		
 	}
 	
 	
-	public void setState(boolean state) {
+	public void setState(int state) {
 		
 		this.state = state;
 		

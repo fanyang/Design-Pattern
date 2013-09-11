@@ -3,24 +3,24 @@ package designpattern.behavioral.memento;
 public class Memento {
 	
 	
-	private boolean state;
+	private int state;
 	
 
-	public Memento(boolean state) {
+	public Memento(int state) {
 
 		this.state = state;
 		
 	}
 
 	
-	public boolean getState() {
+	public int getState() {
 		
 		return state;
 		
 	}
 	
 	
-	public void setState(boolean state) {
+	public void setState(int state) {
 		
 		this.state = state;
 		
