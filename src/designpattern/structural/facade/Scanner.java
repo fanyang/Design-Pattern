@@ -6,6 +6,8 @@ public class Scanner {
 	
 	
 	public Scanner(InputStream in) {
+		
+		// TODO
 
 	}
 

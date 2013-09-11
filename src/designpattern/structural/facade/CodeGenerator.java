@@ -6,6 +6,8 @@ public class CodeGenerator {
 
 	public static void generate(Parser parser, OutputStream out) {
 		
+		// TODO
+		
 	}
 
 }
