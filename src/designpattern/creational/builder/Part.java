@@ -13,5 +13,12 @@ public abstract class Part {
 	public String getName() {
 		return this.name;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return this.name;
+		
+	}
 
 }

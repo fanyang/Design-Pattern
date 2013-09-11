@@ -9,20 +9,16 @@ public class Product {
 
 	
 	public void add(Part part) {
-		this.parts.add(part);
+		
+		parts.add(part);
+		
 	}
 	
 	
 	@Override
 	public String toString(){
 		
-		StringBuilder sb = new StringBuilder();
-		
-		for (Part part : parts) {
-			sb.append(part.getName());
-		}
-		
-		return sb.toString();
+		return parts.toString();
 	}
 	
 	
