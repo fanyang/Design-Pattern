@@ -5,6 +5,8 @@ public class ConcreteStrategyA extends Strategy {
 	@Override
 	public void algorithmInterface() {
 
+		// TODO
+		
 	}
 
 }
