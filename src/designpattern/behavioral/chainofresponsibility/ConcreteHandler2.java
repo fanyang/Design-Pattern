@@ -9,7 +9,7 @@ public class ConcreteHandler2 extends Handler {
 
 		if (request >= 10) {
 			
-			System.out.println("ConcreteHandler2");
+			System.out.println("ConcreteHandler2 handleRequest");
 			
 		} else {
 			if (successor != null) {
