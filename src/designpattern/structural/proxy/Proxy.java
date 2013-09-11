@@ -7,7 +7,9 @@ public class Proxy extends Subject {
 	
 	
 	public Proxy(Subject subject) {
+		
 		this.subject = subject;
+		
 	}
 	
 
@@ -30,4 +32,5 @@ public class Proxy extends Subject {
 		
 	}
 
+	
 }
