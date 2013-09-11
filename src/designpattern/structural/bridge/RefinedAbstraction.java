@@ -9,10 +9,11 @@ public class RefinedAbstraction extends Abstraction {
 		
 	}
 	
+	
 	@Override
 	public void operation() {
 		
-		System.out.println("RefinedAbstraction");
+		System.out.println("RefinedAbstraction operation.");
 		
 		implementor.operationImp();
 	}

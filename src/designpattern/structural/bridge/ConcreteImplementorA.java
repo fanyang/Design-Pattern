@@ -5,7 +5,7 @@ public class ConcreteImplementorA extends Implementor {
 	@Override
 	public void operationImp() {
 
-		System.out.println("ConcreteImplementorA");
+		System.out.println("ConcreteImplementorA operationImp.");
 		
 	}
 
