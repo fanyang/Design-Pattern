@@ -4,18 +4,6 @@ public class ConcreteObserver extends Observer{
 	
 	
 	private int observerState;
-	
-	private ConcreteSubject subject;
-	
-
-	public Subject getSubject() {
-		return subject;
-	}
-
-
-	public void setSubject(ConcreteSubject subject) {
-		this.subject = subject;
-	}
 
 
 	@Override

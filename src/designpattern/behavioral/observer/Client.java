@@ -5,10 +5,10 @@ public class Client {
 	public static void main(String[] args) {
 
 		ConcreteSubject concreteSubject = new ConcreteSubject();
-		ConcreteObserver concreteObserver = new ConcreteObserver();
-		concreteObserver.setSubject(concreteSubject);
+		Observer observer = new ConcreteObserver();
+		observer.setSubject(concreteSubject);
 		
-		concreteSubject.attach(concreteObserver);
+		concreteSubject.attach(observer);
 		concreteSubject.nodify();
 		
 		
