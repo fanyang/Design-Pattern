@@ -58,6 +58,7 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 					String id = bean.getAttribute("id");
 					String className = bean.getAttribute("class");
 					NodeList propertiesList = bean.getElementsByTagName("property");
+					
 					for (int k = 0; k < propertiesList.getLength(); k++) {
 						Element property = (Element) propertiesList.item(k);
 						String name = property.getAttribute("name");
@@ -72,7 +73,9 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 						method.invoke(beans.get(id), beans.get(ref));
 						
 					}
+					
 				}
+				
 			}
 		
 		} catch (Exception e) {
