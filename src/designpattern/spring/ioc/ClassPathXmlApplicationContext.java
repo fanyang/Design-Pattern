@@ -3,12 +3,10 @@ package designpattern.spring.ioc;
 
 import java.io.InputStream;
 import java.lang.reflect.Method;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.w3c.dom.*;
 
 
@@ -25,8 +23,8 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 			// Put beans into map.
 			for (int i = 0; i < configLocations.length; i++) {
 				
-				InputStream inputStream = new URL(this.getClass().getResource("").toString()
-						+ configLocations[i]).openStream();
+				InputStream inputStream = this.getClass()
+						.getResource(configLocations[i]).openStream();
 				
 				Document document = DocumentBuilderFactory.newInstance()
 						.newDocumentBuilder().parse(inputStream);
@@ -46,8 +44,8 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 			// Dependency injection
 			for (int i = 0; i < configLocations.length; i++) {
 				
-				InputStream inputStream = new URL(this.getClass().getResource("").toString()
-						+ configLocations[i]).openStream();
+				InputStream inputStream = this.getClass()
+						.getResource(configLocations[i]).openStream();
 				
 				Document document = DocumentBuilderFactory.newInstance()
 						.newDocumentBuilder().parse(inputStream);
@@ -86,6 +84,7 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 		
 		
 	}
+	
 
 	@Override
 	@SuppressWarnings("unchecked")
