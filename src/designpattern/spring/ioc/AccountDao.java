@@ -8,7 +8,7 @@ public class AccountDao{
 
 	public List<String> getUsernameList() {
 		
-		return new ArrayList<String>(Arrays.asList("Alice", "Bob", "Carol"));
+		return new ArrayList<>(Arrays.asList("Alice", "Bob", "Carol"));
 		
 	}
 

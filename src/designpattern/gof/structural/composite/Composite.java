@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Composite extends Component{
 	
-	private List<Component> children = new ArrayList<Component>();
+	private List<Component> children = new ArrayList<>();
 
 	@Override
 	public void operation() {

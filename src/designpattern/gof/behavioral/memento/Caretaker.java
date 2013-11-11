@@ -1,6 +1,6 @@
 package designpattern.gof.behavioral.memento;
 
-public class Caretacker {
+public class Caretaker {
 	
 	
 	private Memento memento;

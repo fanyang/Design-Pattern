@@ -8,11 +8,11 @@ public class Client {
 		Originator originator = new Originator();
 		originator.setState(1);
 		
-		Caretacker caretacker = new Caretacker();
-		caretacker.setMemento(originator.createMemento());
+		Caretaker caretaker = new Caretaker();
+		caretaker.setMemento(originator.createMemento());
 		
 		originator.setState(0);
-		originator.setMemento(caretacker.getMemento());
+		originator.setMemento(caretaker.getMemento());
 		System.out.println(originator.getState());
 		
 		

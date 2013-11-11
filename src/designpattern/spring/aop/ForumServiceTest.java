@@ -2,7 +2,7 @@ package designpattern.spring.aop;
 
 import java.lang.reflect.Proxy;
 
-public class TestForumService {
+public class ForumServiceTest {
 	
 	
 	public static void main(String[] args) {

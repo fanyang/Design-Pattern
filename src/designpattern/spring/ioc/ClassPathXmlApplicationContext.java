@@ -1,13 +1,18 @@
 package designpattern.spring.ioc;
 
 
+import java.beans.PropertyDescriptor;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.w3c.dom.*;
+import org.xml.sax.SAXException;
 
 
 public class ClassPathXmlApplicationContext implements ApplicationContext {
@@ -20,17 +25,9 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 		
 		try {
 			
-			// Put beans into map.
+			// Put all beans into HashMap.
 			for (int i = 0; i < configLocations.length; i++) {
-				
-				InputStream inputStream = this.getClass()
-						.getResource(configLocations[i]).openStream();
-				
-				Document document = DocumentBuilderFactory.newInstance()
-						.newDocumentBuilder().parse(inputStream);
-				
-				Element root = document.getDocumentElement();
-				NodeList beanNodes = root.getElementsByTagName("bean");
+				NodeList beanNodes = getNodeList(configLocations[i]);
 				
 				for (int j = 0; j < beanNodes.getLength(); j++) {
 					Element bean = (Element) beanNodes.item(j);
@@ -43,20 +40,11 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 			
 			// Dependency injection
 			for (int i = 0; i < configLocations.length; i++) {
-				
-				InputStream inputStream = this.getClass()
-						.getResource(configLocations[i]).openStream();
-				
-				Document document = DocumentBuilderFactory.newInstance()
-						.newDocumentBuilder().parse(inputStream);
-				
-				Element root = document.getDocumentElement();
-				NodeList beanNodes = root.getElementsByTagName("bean");
+				NodeList beanNodes = getNodeList(configLocations[i]);
 				
 				for (int j = 0; j < beanNodes.getLength(); j++) {
 					Element bean = (Element) beanNodes.item(j);
 					String id = bean.getAttribute("id");
-					String className = bean.getAttribute("class");
 					NodeList propertiesList = bean.getElementsByTagName("property");
 					
 					for (int k = 0; k < propertiesList.getLength(); k++) {
@@ -64,13 +52,10 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 						String name = property.getAttribute("name");
 						String ref = property.getAttribute("ref");
 						
-						String methodName = "set" 
-								+ name.substring(0, 1).toUpperCase()
-								+ name.substring(1);
-						Method method = Class.forName(className)
-								.getMethod(methodName, beans.get(ref).getClass());
 						//injection
-						method.invoke(beans.get(id), beans.get(ref));
+						PropertyDescriptor propertyDescriptor = 
+								new PropertyDescriptor(name, beans.get(id).getClass());
+						propertyDescriptor.getWriteMethod().invoke(beans.get(id), beans.get(ref));
 						
 					}
 					
@@ -86,6 +71,21 @@ public class ClassPathXmlApplicationContext implements ApplicationContext {
 
 		
 		
+	}
+
+
+	private NodeList getNodeList(String location)
+			throws SAXException, IOException, ParserConfigurationException {
+		InputStream inputStream = this.getClass()
+				.getResourceAsStream(location);
+		
+		Document document = DocumentBuilderFactory.newInstance()
+				.newDocumentBuilder().parse(inputStream);
+		
+		Element root = document.getDocumentElement();
+		NodeList beanNodes = root.getElementsByTagName("bean");
+		
+		return beanNodes;
 	}
 	
 

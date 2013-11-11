@@ -3,7 +3,6 @@ package designpattern.gof.behavioral.chainofresponsibility;
 public class ConcreteHandler2 extends Handler {
 
 
-
 	@Override
 	public void handleRequest(int request) {
 
@@ -11,13 +10,9 @@ public class ConcreteHandler2 extends Handler {
 			
 			System.out.println("ConcreteHandler2 handleRequest");
 			
-		} else {
-			if (successor != null) {
+		} else if (successor != null) {
 				successor.handleRequest(request);
-			}
 		}
-
-		
 	}
 
 }

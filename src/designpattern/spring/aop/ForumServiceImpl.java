@@ -9,7 +9,7 @@ public class ForumServiceImpl implements ForumService {
 
 		try {
 			Thread.sleep(new Random().nextInt(100));
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
@@ -23,7 +23,7 @@ public class ForumServiceImpl implements ForumService {
 		
 		try {
 			Thread.sleep(new Random().nextInt(100));
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 

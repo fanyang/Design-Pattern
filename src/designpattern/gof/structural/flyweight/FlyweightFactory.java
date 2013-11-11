@@ -6,7 +6,7 @@ import java.util.Map;
 public class FlyweightFactory {
 	
 	
-	private static Map<String, Flyweight> flyweights = new HashMap<String, Flyweight>();
+	private static Map<String, Flyweight> flyweights = new HashMap<>();
 
 	
 	public static Flyweight getFlyweight(String key) {
